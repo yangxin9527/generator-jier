@@ -23,5 +23,10 @@ yarn cp //创建页面
 
 ### 剩余问题
 
-- 同步安装 install生命周期中安装
-- 完成告知修改了什么,如何使用
+- install安装 plop依赖失败
+- plop 参数修改 为create component 和page 
+
+## 待优化
+
+- plop 直接装在依赖中,而不是用户运行yo jier才开始安装,需要暴露出jier方法 
+- 生成命令行帮助信息
