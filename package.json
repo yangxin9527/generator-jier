@@ -1,6 +1,6 @@
 {
     "name": "generator-jier",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "main": "index.js",
     "license": "MIT",
     "description": "create project",
@@ -8,14 +8,11 @@
         "jier": "bin/jier.js"
     },
     "keywords": [
-        "plop",
         "yeoman-generator",
         "yeoman"
     ],
     "dependencies": {
         "chalk": "^4.1.0",
-        "ora": "^5.3.0",
-        "plop": "^2.7.4",
         "yeoman-generator": "^4.1.0"
     }
 }

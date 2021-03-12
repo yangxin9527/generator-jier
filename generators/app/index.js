@@ -1,6 +1,5 @@
 const Generator = require('yeoman-generator')
 const chalk = require('chalk');
-const ora = require('ora');
 const log = console.log;
 const error = chalk.bold.red;
 const warning = chalk.keyword('orange');
@@ -8,7 +7,6 @@ const success = chalk.keyword('green');
 
 
 
-let spinner = null; //加载对象
 
 
 
@@ -68,8 +66,8 @@ module.exports = class extends Generator {
     writing() {
         // 写入命令
         let jsonContent = this.readDestinationJSON('package.json');
-        jsonContent.scripts.cc = 'plop cc'
-        jsonContent.scripts.cp = 'plop cp';
+        jsonContent.scripts.cc = 'plop component'
+        jsonContent.scripts.cp = 'plop page';
         this.writeDestinationJSON('package.json', jsonContent)
 
         //复制模板到目标路径
@@ -108,14 +106,14 @@ module.exports = class extends Generator {
         if (!this.hasInstalledDevs) {
             switch (this.answers.type) {
                 case 'yarn':
-                    this.yarnInstall('plop')
+                    this.yarnInstall('is-odd')
                     break;
                 case 'npm':
-                    this.npmInstall('plop')
+                    this.npmInstall('is-odd')
                     break;
                 case 'cnpm':
                 default:
-                    this.npmInstall('plop', {
+                    this.npmInstall('is-odd', {
                         registry: "https://registry.npm.taobao.org"
                     })
             }
@@ -127,11 +125,10 @@ module.exports = class extends Generator {
     }
     install() {
         if (!this.hasInstalledDevs) {
-            spinner = ora(warning('正在安装依赖...')).start();
+            warning('正在安装依赖...')
         }
     }
     end() { //结束动作，例如清屏，输出结束信息，say GoodBye等等
-        spinner && spinner.stop();
         log(success('Happy Coding !!  yarn cc [coponent-name] yarn cp [page-name]'));
     }
 }
