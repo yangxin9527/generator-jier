@@ -1,0 +1,29 @@
+import React, { Component } from 'react'
+import { View } from '@tarojs/components'
+import { observer, inject } from 'mobx-react'
+
+import './{{upperCase name}}.less'
+
+type PageStateProps = {
+
+}
+
+interface {{upperCase name}} {
+  props: PageStateProps;
+}
+
+
+@inject('store')
+@observer
+class {{upperCase name}} extends Component {
+  render () {
+    return (
+      <View className='{{upperCase name}}-component-wrap'>
+        {{upperCase name}}组件
+      </View>
+    )
+  }
+}
+
+export default {{upperCase name}};
+

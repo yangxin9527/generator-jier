@@ -1,0 +1,31 @@
+<template>
+  <view class='{{upperCase name}}-c-wrap'>
+    {{upperCase name}}组件
+  </view>
+</template>
+
+<script>
+ export default {
+   name : '{{upperCase name}}',
+   props:{
+     test:{
+       type:String,
+       default:'test'
+     }
+   },
+   methods: {
+
+   },
+   data(){
+     return{
+
+     }
+   }
+ }
+</script>
+
+<style lang="scss" scoped>
+    .{{upperCase name}}-c-wrap{
+
+    }
+</style>

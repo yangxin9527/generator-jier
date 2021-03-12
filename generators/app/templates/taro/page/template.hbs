@@ -1,0 +1,37 @@
+import React, { Component } from 'react'
+import { View } from '@tarojs/components'
+import { observer, inject } from 'mobx-react'
+import Nav from "@/components/Nav/Nav";
+
+import './index.less'
+
+type PageStateProps = {
+  store:any
+}
+
+interface {{upperCase name}} {
+  props: PageStateProps;
+}
+
+@inject('store')
+@observer
+class {{upperCase name}} extends Component<any,any> {
+  static onShareAppMessage () {
+    return {}
+  }
+  constructor(props) {
+    super(props);
+    this.state={
+
+    }
+  }
+  render () {
+    return (
+      <View className='{{name}}-page-wrap'>
+        <Nav>{{name}}</Nav>
+      </View>
+    )
+  }
+}
+
+export default {{upperCase name}}
