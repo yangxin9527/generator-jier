@@ -131,7 +131,7 @@ module.exports = class extends Generator {
         }
     }
     end() { //结束动作，例如清屏，输出结束信息，say GoodBye等等
-        spinner.stop();
+        spinner && spinner.stop();
         log(success('Happy Coding !!  yarn cc [coponent-name] yarn cp [page-name]'));
     }
 }
