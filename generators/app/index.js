@@ -8,8 +8,6 @@ const success = chalk.keyword('green');
 
 
 
-
-
 log(chalk.green(
     '仓库地址: ' +
     chalk.blue.underline.bold('github.com/yangheroxin')
@@ -49,14 +47,7 @@ module.exports = class extends Generator {
             message: 'which template do you want ? | 想创建什么模板',
             choices: templateList
         }, ]
-        if (!this.hasInstalledDevs) {
-            promptsList.push({
-                type: 'rawlist',
-                name: 'type',
-                message: 'choose a package manager | 选择包管理工具',
-                choices: ["cnpm", "yarn", "npm"]
-            })
-        }
+
         return this.prompt(promptsList)
             .then(answers => {
                 this.answers = answers;
@@ -68,9 +59,11 @@ module.exports = class extends Generator {
         let jsonContent = this.readDestinationJSON('package.json');
         jsonContent.scripts.cc = 'plop component'
         jsonContent.scripts.cp = 'plop page';
+        if (!this.hasInstalledDevs) {
+            jsonContent.dependencies['plop'] = "^2.7.4";
+        }
         this.writeDestinationJSON('package.json', jsonContent)
-
-        //复制模板到目标路径
+            //复制模板到目标路径
         let templates = []
         let outputs = []
         switch (this.answers.template) {
@@ -102,33 +95,28 @@ module.exports = class extends Generator {
                 this.destinationPath(outputs[i])
             )
         })
-
-        if (!this.hasInstalledDevs) {
-            switch (this.answers.type) {
-                case 'yarn':
-                    this.yarnInstall('is-odd')
-                    break;
-                case 'npm':
-                    this.npmInstall('is-odd')
-                    break;
-                case 'cnpm':
-                default:
-                    this.npmInstall('is-odd', {
-                        registry: "https://registry.npm.taobao.org"
-                    })
-            }
-        }
     }
 
     conflicts() {
         this.conflicter.force = true;
     }
-    install() {
-        if (!this.hasInstalledDevs) {
-            warning('正在安装依赖...')
-        }
-    }
+
+    // install() {
+    //     if (!this.hasInstalledDevs) {
+    //         warning('正在安装依赖...')
+    //     }
+    // }
     end() { //结束动作，例如清屏，输出结束信息，say GoodBye等等
-        log(success('Happy Coding !!  yarn cc [coponent-name] yarn cp [page-name]'));
+        log(chalk `
+            please install dependencies again | 请再次安装依赖
+            {red npm i} 
+            and then you can run cmd | 接着你可以尝试命令行运行下面指令
+            {red npm run cc [componentName]} or {red npm run cp [pageName]}    //创建组件和页面
+            
+            diy: | 自定义：
+            {gray plop-templates/}  
+            {gray plopfile.js}
+        `);
+
     }
 }

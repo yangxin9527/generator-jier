@@ -1,12 +1,9 @@
 {
     "name": "generator-jier",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "main": "index.js",
     "license": "MIT",
-    "description": "create project",
-    "bin": {
-        "jier": "bin/jier.js"
-    },
+    "description": "create project quickly,更快创建项目结构",
     "keywords": [
         "yeoman-generator",
         "yeoman"

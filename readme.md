@@ -1,32 +1,30 @@
 ## 自动生成plop模板
 
-```
-yo plop //创建模板
-yarn cc //创建组件
-yarn cp //创建页面
+use yeoman-generator to create templates and then use plop to create files quickly
+
+使用yeoman-generator创建模板和配置文件,最后用plop来创建组件和页面
+
+### base | 前提
+
+- if you didn't install yeoman ,you should run `npm install -g yo`
+- 如果没有安装yeoman,你需要先 `npm install -g yo`
+
+### how to use | 如何使用
 
 ```
-- 选择模板(用户输入)
-    - taro
-    - uni-app
+npm i -S generator-jier 
+yo plop                     // init | 初始化 选择模板 用于生成目录结构
+npm i                       // install plop | 安装plop 
+npm run cc [componentName]  // create component | 创建组件
+npm run cp [componentName]  //create page | 创建页面
+```
+### DIY
 
-- 读取package.json 写入plop cc 和plop cp 命令
+you can change `plop-template/` and `plopfile.js` to use conveniently 
 
-- 复制模板到目标路径
+你可以修改`plop-template/`和`plopfile.js`的内容来更方便使用
 
-- 选择安装工具(用户输入,如果没有安装plop则进入)
-    - cnpm 
-    - npm 
-    - yarn
+### question | 问题
 
-- 完成
+- install plop依赖失败 本地可以,传到线上就不行 解决不了.所以 直接修改package.json,然后用户来npm i
 
-### 剩余问题
-
-- install安装 plop依赖失败
-- plop 参数修改 为create component 和page 
-
-## 待优化
-
-- plop 直接装在依赖中,而不是用户运行yo jier才开始安装,需要暴露出jier方法 
-- 生成命令行帮助信息
