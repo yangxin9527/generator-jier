@@ -10,7 +10,7 @@ const success = chalk.keyword('green');
 
 log(chalk.green(
     '仓库地址: ' +
-    chalk.blue.underline.bold('github.com/yangheroxin')
+    chalk.blue.underline.bold('https://github.com/yangxin9527/generator-jier.git')
 ));
 
 
@@ -73,6 +73,7 @@ module.exports = class extends Generator {
                     'taro/component/template.less.hbs',
                     'taro/page/template.hbs',
                     'taro/page/template.less.hbs',
+                    'taro/page/index.config.ts',
                 ]
                 outputs = templates.map(item => item.replace('taro/', 'plop-templates/'))
                 templates.push('taro/plopfile.js')

@@ -1,25 +1,22 @@
 <template>
-  <view class='{{upperCase name}}-wrap'>
-    {{upperCase name}}页面
+  <view class='p-{{kebabCase name}}'>
+    {{bigCamelCase name}}页面
   </view>
 </template>
 
 <script>
  export default {
-
-   methods: {
-
-   },
+   components:{},
+   methods: {},
+   mounted(){},
    data(){
-     return{
-
-     }
+     return{}
    }
  }
 </script>
 
 <style lang="scss" scoped>
-    .{{upperCase name}}-wrap{
+    .p-{{kebabCase name}}{
 
     }
 </style>

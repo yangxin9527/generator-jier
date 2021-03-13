@@ -1,21 +1,15 @@
 <template>
-  <view class='{{upperCase name}}-c-wrap'>
-    {{upperCase name}}组件
+  <view class='c-{{kebabCase name}}'>
+    {{bigCamelCase name}}组件
   </view>
 </template>
 
 <script>
  export default {
-   name : '{{upperCase name}}',
-   props:{
-     test:{
-       type:String,
-       default:'test'
-     }
-   },
-   methods: {
-
-   },
+   name : '{{bigCamelCase name}}',
+   props:{ },
+   components:{},
+   methods: {},
    data(){
      return{
 
@@ -25,7 +19,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .{{upperCase name}}-c-wrap{
+    .c-{{kebabCase name}}{
 
     }
 </style>

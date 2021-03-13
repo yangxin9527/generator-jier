@@ -13,7 +13,7 @@ use yeoman-generator to create templates and then use plop to create files quick
 
 ```
 npm i -S generator-jier 
-yo plop                     // init | 初始化 选择模板 用于生成目录结构
+yo jier                     // init | 初始化 选择模板 用于生成目录结构
 npm i                       // install plop | 安装plop 
 npm run cc [componentName]  // create component | 创建组件
 npm run cp [componentName]  //create page | 创建页面
@@ -28,3 +28,7 @@ you can change `plop-template/` and `plopfile.js` to use conveniently
 
 - install plop依赖失败 本地可以,传到线上就不行 解决不了.所以 直接修改package.json,然后用户来npm i
 
+### Tips 
+component (testName | test-name) => class TestName      .c-test-name
+
+page (testName | test-name) => class TestName      .p-test-name
