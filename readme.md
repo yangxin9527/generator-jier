@@ -1,8 +1,8 @@
 ## 自动生成plop模板
 
-use yeoman-generator to create templates and then use plop to create files quickly
+use *yeoman-generator* to create templates and then use *plop* to create files quickly
 
-使用yeoman-generator创建模板和配置文件,最后用plop来创建组件和页面
+使用*yeoman-generator*创建模板和配置文件,最后用*plop*来创建组件和页面
 
 ### base | 前提
 
@@ -26,9 +26,13 @@ you can change `plop-template/` and `plopfile.js` to use conveniently
 
 ### question | 问题
 
-- install plop依赖失败 本地可以,传到线上就不行 解决不了.所以 直接修改package.json,然后用户来npm i
+- 使用generator的upmInstall('plop')依赖失败.本地可以,传到npm库里就不行.所以 直接修改package.json,然后用户自己装依赖
 
 ### Tips 
-component (testName | test-name) => class TestName      .c-test-name
 
-page (testName | test-name) => class TestName      .p-test-name
+命令 | taro | uni-app
+
+yarn cc test/testCom | ++ src/pages/test/TestCom(.tsx,.less) | ++ src/pages/test/TestCom.vue
+
+yarn cp test/test-page | ++ src/pages/test/test-page(.tsx,.less,.config.ts) | ++ src/pages/test/test-page.vue
+

@@ -2,28 +2,28 @@ import React, { Component } from 'react'
 import { View } from '@tarojs/components'
 import { observer, inject } from 'mobx-react'
 
-import './{{upperCase name}}.less'
+import './{{bigCamelCase name}}.less'
 
 type PageStateProps = {
 
 }
 
-interface {{upperCase name}} {
+interface {{bigCamelCase name}} {
   props: PageStateProps;
 }
 
 
 @inject('store')
 @observer
-class {{upperCase name}} extends Component {
+class {{bigCamelCase name}} extends Component {
   render () {
     return (
-      <View className='{{upperCase name}}-component-wrap'>
-        {{upperCase name}}组件
+      <View className='c-{{kebabCase name}}'>
+        {{bigCamelCase name}}组件
       </View>
     )
   }
 }
 
-export default {{upperCase name}};
+export default {{bigCamelCase name}};
 
