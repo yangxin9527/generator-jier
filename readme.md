@@ -1,4 +1,9 @@
-## 自动生成plop模板
+<p align="center">
+  <a href="https://npmcharts.com/compare/generator-jier?minimal=true"><img src="https://img.shields.io/npm/dm/generator-jier.svg" alt="Downloads"></a>
+  <a href="https://www.npmjs.com/package/generator-jier"><img src="https://img.shields.io/npm/l/generator-jier.svg" alt="License"></a>
+</p>
+
+<h2 align="center">Supporting *generator-jier*</h2>
 
 use *yeoman-generator* to create templates and then use *plop* to create files quickly
 
@@ -30,7 +35,7 @@ you can change `plop-template/` and `plopfile.js` to use conveniently
 
 ### Tips 
 
-命令 | taro | uni-app
+command | taro | uni-app
 
 yarn cc test/testCom | ++ src/pages/test/TestCom(.tsx,.less) | ++ src/pages/test/TestCom.vue
 
